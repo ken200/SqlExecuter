@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.33423.255
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlExecuter.Core", "SqlExecuter.Core\SqlExecuter.Core.csproj", "{32EEA60C-A840-419D-BCE0-5E3923B75C44}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32EEA60C-A840-419D-BCE0-5E3923B75C44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32EEA60C-A840-419D-BCE0-5E3923B75C44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32EEA60C-A840-419D-BCE0-5E3923B75C44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32EEA60C-A840-419D-BCE0-5E3923B75C44}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8439194D-C0F7-4C6C-B1F4-C44BE47F3972}
+	EndGlobalSection
+EndGlobal
