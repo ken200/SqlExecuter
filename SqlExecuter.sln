@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.33423.255
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlExecuter.Core", "SqlExecuter.Core\SqlExecuter.Core.csproj", "{32EEA60C-A840-419D-BCE0-5E3923B75C44}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlExecuter", "SqlExecuter\SqlExecuter.csproj", "{32EEA60C-A840-419D-BCE0-5E3923B75C44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

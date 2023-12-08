@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{32EEA60C-A840-419D-BCE0-5E3923B75C44}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SqlExecuter.Core</RootNamespace>
-    <AssemblyName>SqlExecuter.Core</AssemblyName>
+    <RootNamespace>SqlExecuter</RootNamespace>
+    <AssemblyName>SqlExecuter</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,6 +46,8 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MsSqlComponentWrapper.cs" />
+    <Compile Include="SqlScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
