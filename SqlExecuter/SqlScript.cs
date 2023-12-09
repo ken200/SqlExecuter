@@ -7,25 +7,23 @@ using System.IO;
 
 namespace SqlExecuter
 {
-    class SqlScript
+    class SqlScriptFile
     {
-        public IEnumerable<string> Lines { get; private set; }
+        private string _filePath;
 
-        private SqlScript(){}
+        public string ScriptInfo => string.Format("SqlScriptFilePath: {0}", _filePath);
 
-        public static SqlScript FromFile(string filePath)
+        public string Content { get; }
+
+        public SqlScriptFile(string filePath)
         {
+            _filePath = filePath;
+
             using (var fs = new FileStream(filePath, FileMode.Open))
             {
                 using (var sr = new StreamReader(fs))
                 {
-                    var lines = new List<string>();
-                    while (!sr.EndOfStream)
-                    {
-                        var line = sr.ReadLine();
-                        lines.Add(line.LastOrDefault() != ';' ? line + "; " : line);
-                    }
-                    return new SqlScript() { Lines = lines };
+                    Content = sr.ReadToEnd();
                 }
             }
         }

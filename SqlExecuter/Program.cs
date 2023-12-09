@@ -16,7 +16,7 @@ namespace SqlExecuter
             {
                 var sqlScripts = Directory
                     .GetFiles(ConfigurationManager.AppSettings["sqlScriptDir"].ToString(), "*.sql", SearchOption.AllDirectories)
-                    .Select(a => SqlScript.FromFile(a));
+                    .Select(a => new SqlScriptFile(a));
 
                 var sqlComWrapper = new MsSqlComponentWrapper(ConfigurationManager.ConnectionStrings["default"].ConnectionString);
 

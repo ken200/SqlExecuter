@@ -16,22 +16,31 @@ namespace SqlExecuter
             _connectionString = connectionString;
         }
 
-        public int ExecuteNonQuery(IEnumerable<SqlScript> sqlScripts)
+        public void ExecuteNonQuery(IEnumerable<SqlScriptFile> sqlScripts)
         {
             using (var con = new SqlConnection(_connectionString))
             {
                 con.Open();
 
-                var allScript = string.Join("\r\n ", sqlScripts.Select(a => a.Lines).SelectMany(a => a));
-
                 var tran = con.BeginTransaction();
 
-                using (var cmd = new SqlCommand(allScript, con, tran))
+                foreach(var sqlScript in sqlScripts)
                 {
-                    var ret = cmd.ExecuteNonQuery();
-                    tran.Commit();
-                    return ret;
+                    try
+                    {
+                        using (var cmd = new SqlCommand(sqlScript.Content, con, tran))
+                        {
+                            var ret = cmd.ExecuteNonQuery();
+                        }
+                    }
+                    catch (Exception exc)
+                    {
+                        var msg = string.Format("{0} - {1}", sqlScript.ScriptInfo, exc.Message);
+                        throw new Exception(msg, exc);
+                    }
                 }
+
+                tran.Commit();
             }
         }
     }
